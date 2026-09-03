@@ -4,8 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="description" content="زاد — رفيق هادئ يوثّق ما أنجزته من عبادة. محلي وخاص بالكامل." />
-    <meta name="theme-color" content="#161816" media="(prefers-color-scheme: dark)" />
-    <meta name="theme-color" content="#f6f3ec" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#f5f2ea" />
+    <script>
+      /* ZAD — apply the stored theme before first paint (no light flash on dark).
+         Keep in sync with src/lib/theme.ts (key: zad.theme). */
+      (function () {
+        try {
+          var t = localStorage.getItem('zad.theme')
+          if (t !== 'light' && t !== 'dark' && t !== 'system') t = 'system'
+          var dark =
+            t === 'dark' ||
+            (t === 'system' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)
+          document.documentElement.dataset.theme = dark ? 'dark' : 'light'
+          var m = document.querySelector('meta[name="theme-color"]')
+          if (m) m.setAttribute('content', dark ? '#141613' : '#f5f2ea')
+        } catch (err) {}
+      })()
+    </script>
     <meta name="color-scheme" content="light dark" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />

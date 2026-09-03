@@ -30,9 +30,26 @@ const mq = typeof window !== 'undefined' && 'matchMedia' in window
   ? window.matchMedia('(prefers-color-scheme: dark)')
   : null
 
+/* status-bar / toolbar colors, aligned with the design tokens */
+const THEME_COLORS = { light: '#f5f2ea', dark: '#141613' } as const
+
 export function applyTheme(pref: ThemePreference): void {
   const effective = pref === 'system' ? (mq?.matches ? 'dark' : 'light') : pref
   document.documentElement.dataset.theme = effective
+  const meta = document.querySelector('meta[name="theme-color"]')
+  if (meta) meta.setAttribute('content', THEME_COLORS[effective])
+}
+
+/**
+ * Apply the stored preference at startup — before any screen mounts —
+ * and keep النظام live when the device scheme changes.
+ * The theme must never depend on the settings screen being open.
+ */
+export function initTheme(): void {
+  applyTheme(loadThemePreference())
+  onSystemSchemeChange(() => {
+    if (loadThemePreference() === 'system') applyTheme('system')
+  })
 }
 
 /** Subscribe to system scheme changes (used while on النظام). */

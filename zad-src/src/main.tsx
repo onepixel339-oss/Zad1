@@ -9,9 +9,15 @@ import './styles/global.css'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { App } from './app/App'
+import { initTheme } from './lib/theme'
 
 const rootEl = document.getElementById('root')
 if (!rootEl) throw new Error('root element missing')
+
+// theme applies before the very first screen renders — it never
+// depends on the settings tab being mounted (startup was light
+// until the user opened الإعدادات — fixed)
+initTheme()
 
 createRoot(rootEl).render(
   <StrictMode>
