@@ -1,0 +1,286 @@
+/* Home — اليوم. The heart of ZAD. Calm and spacious. */
+
+.header {
+  padding-top: 6px;
+}
+
+.brand {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--accent-ink);
+}
+
+.dayNumber {
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 1.25;
+  margin-top: 14px;
+  color: var(--ink);
+}
+
+.dateLine {
+  color: var(--ink-2);
+  font-size: 15px;
+  margin-top: 2px;
+}
+
+.timeLoc {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  margin-top: 10px;
+  color: var(--ink-2);
+  font-size: 15px;
+}
+
+.time {
+  font-weight: 500;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.locBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--ink-2);
+  border-radius: var(--radius-s);
+  min-height: 32px;
+  transition: color var(--t-fast) var(--ease);
+}
+
+.locBtn:hover {
+  color: var(--ink);
+}
+
+.pinIcon {
+  width: 15px;
+  height: 15px;
+  color: var(--ink-3);
+}
+
+/* ---------- next prayer ---------- */
+.nextPrayer {
+  margin-top: 20px;
+  width: 100%;
+  text-align: start;
+  background: var(--surface);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-l);
+  padding: 14px 16px;
+  transition: border-color var(--t-fast) var(--ease);
+}
+
+.nextPrayer:hover {
+  border-color: var(--line);
+}
+
+.nextLabel {
+  font-size: 13px;
+  color: var(--ink-3);
+}
+
+.nextLine {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 2px;
+}
+
+.nextEnd {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex: none;
+  white-space: nowrap;
+}
+
+.nextName {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.nextTomorrow {
+  font-size: 12.5px;
+  font-weight: 400;
+  color: var(--ink-3);
+}
+
+.nextTime {
+  font-size: 15px;
+  color: var(--ink-2);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.chev {
+  width: 16px;
+  height: 16px;
+  color: var(--ink-3);
+  transition: transform var(--t-med) var(--ease);
+}
+
+.chevOpen {
+  transform: rotate(90deg);
+}
+
+.timesList {
+  margin-top: 10px;
+  border-top: 1px solid var(--line-soft);
+  padding-top: 8px;
+}
+
+.timesRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+  font-size: 14.5px;
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+
+.timesRow > span:last-child {
+  flex: none;
+}
+
+.timesRowCurrent {
+  color: var(--accent-ink);
+  font-weight: 600;
+}
+
+.timesName {
+  font-weight: 500;
+}
+
+/* ---------- sections ---------- */
+.subSection {
+  margin-top: 18px;
+}
+
+.subLabel {
+  font-size: 13.5px;
+  color: var(--ink-3);
+  margin-bottom: 2px;
+}
+
+.addWrap {
+  padding: 8px 0 4px;
+}
+
+.addBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--accent-ink);
+  font-size: 15px;
+  font-weight: 500;
+  min-height: 44px;
+  padding: 0 4px;
+  border-radius: var(--radius-m);
+}
+
+.addIcon {
+  width: 17px;
+  height: 17px;
+}
+
+.emptyZadak {
+  font-size: 14px;
+  color: var(--ink-3);
+  padding: 6px 0 2px;
+  line-height: 1.9;
+}
+
+/* ---------- location sheet ---------- */
+.sheetBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgb(0 0 0 / 0.35);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 50;
+}
+
+.sheet {
+  background: var(--bg);
+  width: 100%;
+  max-width: 620px;
+  max-height: 82dvh;
+  border-radius: var(--radius-l) var(--radius-l) 0 0;
+  border: 1px solid var(--line-soft);
+  border-bottom: none;
+  padding: 18px var(--page-x) calc(22px + env(safe-area-inset-bottom, 0px));
+  overflow-y: auto;
+}
+
+.sheetTitle {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.gpsBtn {
+  width: 100%;
+  min-height: 46px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  background: var(--surface);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 6px;
+  transition: border-color var(--t-fast) var(--ease);
+}
+
+.gpsBtn:hover {
+  border-color: var(--accent);
+}
+
+.gpsNote {
+  font-size: 12.5px;
+  color: var(--ink-3);
+  margin-bottom: 14px;
+}
+
+.citySearch {
+  width: 100%;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  border-radius: var(--radius-m);
+  padding: 11px 14px;
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.citySearch:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.cityList {
+  display: flex;
+  flex-direction: column;
+}
+
+.cityItem {
+  text-align: start;
+  padding: 11px 6px;
+  min-height: 44px;
+  font-size: 15.5px;
+  border-radius: var(--radius-s);
+  transition: background-color var(--t-fast) var(--ease);
+}
+
+.cityItem:hover {
+  background: var(--surface-2);
+}
+
+.noCity {
+  color: var(--ink-3);
+  font-size: 14px;
+  padding: 12px 4px;
+}

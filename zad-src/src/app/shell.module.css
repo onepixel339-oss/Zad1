@@ -1,0 +1,107 @@
+/* App shell + bottom navigation */
+
+.shell {
+  min-height: 100dvh;
+}
+
+.tabbar {
+  position: fixed;
+  bottom: 0;
+  inset-inline: 0;
+  display: flex;
+  justify-content: center;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-top: 1px solid var(--line-soft);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  z-index: 40;
+}
+
+.tabbarInner {
+  display: flex;
+  width: 100%;
+  max-width: 620px;
+}
+
+.tab {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  min-height: 58px;
+  padding-top: 9px;
+  color: var(--ink-3);
+  font-size: 12px;
+  font-weight: 500;
+  transition: color var(--t-fast) var(--ease);
+}
+
+.tab:hover {
+  color: var(--ink-2);
+}
+
+.tabOn {
+  color: var(--accent-ink);
+}
+
+.tabIcon {
+  width: 21px;
+  height: 21px;
+  stroke-width: 1.8;
+}
+
+/* overlay page (adhkar) slides in quietly */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  z-index: 45;
+  overflow-y: auto;
+  animation: overlayIn var(--t-med) var(--ease);
+}
+
+@keyframes overlayIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.loading {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  color: var(--ink-3);
+  font-size: 14px;
+}
+
+/* fatal error — calm, human, no jargon */
+.errorWrap {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.errorBox {
+  max-width: 420px;
+  text-align: center;
+}
+
+.errorTitle {
+  font-size: 19px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.errorText {
+  color: var(--ink-2);
+  font-size: 14.5px;
+  line-height: 2;
+}

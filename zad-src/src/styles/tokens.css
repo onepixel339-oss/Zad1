@@ -1,0 +1,71 @@
+/*
+  ZAD — design tokens
+  A quiet, warm, restrained system.
+  Dark mode is a major part of the identity: near-black charcoal,
+  warm off-white text, deep muted green accent.
+*/
+
+:root {
+  /* type */
+  --font-ui: 'IBM Plex Sans Arabic', 'Noto Naskh Arabic', -apple-system, 'Segoe UI', system-ui, sans-serif;
+  --font-read: 'Noto Naskh Arabic', 'IBM Plex Sans Arabic', serif;
+
+  /* shape */
+  --radius-s: 8px;
+  --radius-m: 10px;
+  --radius-l: 14px;
+
+  /* rhythm */
+  --gap-s: 8px;
+  --gap-m: 14px;
+  --gap-l: 24px;
+  --gap-xl: 40px;
+  --page-x: 22px;
+  --tap: 44px;
+
+  /* motion */
+  --ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --t-fast: 140ms;
+  --t-med: 260ms;
+
+  /* light theme (warm, calm — never clinical) */
+  --bg: #f5f2ea;
+  --bg-dim: #efeadf;
+  --surface: #fbf9f3;
+  --surface-2: #eee9dd;
+  --ink: #2a2c24;
+  --ink-2: #6f7166;
+  --ink-3: #9b9c8f;
+  --line: #e2ddcf;
+  --line-soft: #eae5d8;
+  --accent: #4b6f56;
+  --accent-ink: #3a5a44;
+  --accent-soft: #dfe7db;
+  --accent-ink-soft: #55714f;
+  --selected-bg: #e4e9df;
+  --done-ink: #4b6f56;
+  --danger: #8a5a4a;
+
+  color-scheme: light;
+}
+
+[data-theme='dark'] {
+  --bg: #141613;
+  --bg-dim: #101210;
+  --surface: #1a1d18;
+  --surface-2: #22261f;
+  --ink: #e8e5da;
+  --ink-2: #a09e91;
+  --ink-3: #6e6d62;
+  --line: #2a2d26;
+  --line-soft: #22251f;
+  --accent: #7a9b84;
+  --accent-ink: #8fad96;
+  --accent-soft: #232b23;
+  --accent-ink-soft: #7a9b84;
+  --selected-bg: #242c24;
+  --done-ink: #8fad96;
+  --danger: #b98a76;
+
+  color-scheme: dark;
+}
